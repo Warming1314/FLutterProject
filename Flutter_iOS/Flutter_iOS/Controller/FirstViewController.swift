@@ -7,22 +7,33 @@
 //
 
 import UIKit
+import Flutter
 
 class FirstViewController: UIViewController {
-    
-    var firstPartView: FirstView = {
-        let firstView = FirstView()
-        firstView.backgroundColor = UIColor.yellow
-        return firstView
+
+    var pushButton: UIButton = {
+        let btn = UIButton(type: .custom)
+        btn.setTitle("点击后进入Flutter页面", for: .normal)
+        btn.setTitleColor(UIColor.lightGray, for: .normal)
+        btn.backgroundColor = UIColor.yellow
+        return btn
     }()
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.white
-        firstPartView.frame = CGRect(x: 40, y: 150, width: UIScreen.main.bounds.width-80, height: 100)
-        self.view.addSubview(firstPartView)
+        pushButton.addTarget(self, action: #selector(pushAction), for: .touchUpInside)
+        pushButton.frame = CGRect(x: 50, y: 150, width: UIScreen.main.bounds.width-100, height: 70)
+        self.view.addSubview(pushButton)
         
+    }
+    
+    @objc func pushAction(){
+        let flutterViewController = FlutterViewController()
+        flutterViewController.title = "这是一个flutter页面"
+        //flutterViewController.setInitialRoute("myApp")
+        self.navigationController?.pushViewController(flutterViewController, animated: true)
     }
 
     /*

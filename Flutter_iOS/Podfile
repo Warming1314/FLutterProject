@@ -1,0 +1,29 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'Flutter_iOS' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+    pod 'YYText', '1.0.7'
+
+    ## ==============Flutter ==============_
+    ##绝对路径_
+
+    flutter_application_path = '/Users/pxcm-0101-01-0049/Desktop/iOS_Flutter/FlutterPro/flutter_library/'
+    load File.join(flutter_application_path, '.ios', 'Flutter', 'podhelper.rb')
+    ## ==============Flutter ==============
+
+  # Pods for Flutter_iOS
+
+  target 'Flutter_iOSTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'Flutter_iOSUITests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+end

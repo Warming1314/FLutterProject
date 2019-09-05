@@ -1,0 +1,12 @@
+//
+//  Flutter.xcconfig
+//  Flutter_iOS
+//
+//  Created by PXCM-0101-01-0049 on 2019/8/29.
+//  Copyright © 2019 PXCM-0101-01-0049. All rights reserved.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+#include "/Users/pxcm-0101-01-0049/Desktop/iOS_Flutter/FlutterPro/flutter_library/.ios/Flutter/Generated.xcconfig"
+ENABLE_BITCODE=NO
