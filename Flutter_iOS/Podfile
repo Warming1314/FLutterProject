@@ -6,14 +6,6 @@ target 'Flutter_iOS' do
   use_frameworks!
 
     pod 'YYText', '1.0.7'
-
-    ## ==============Flutter ==============_
-    ##绝对路径_
-
-    flutter_application_path = '/Users/pxcm-0101-01-0049/Desktop/iOS_Flutter/FlutterPro/flutter_library/'
-    load File.join(flutter_application_path, '.ios', 'Flutter', 'podhelper.rb')
-    ## ==============Flutter ==============
-
   # Pods for Flutter_iOS
 
   target 'Flutter_iOSTests' do
@@ -27,3 +19,13 @@ target 'Flutter_iOS' do
   end
 
 end
+
+    ## ==============Flutter ==============
+    ##绝对路径
+
+    flutter_application_path = '../flutter_library/'
+    # load File.join(flutter_application_path, '.ios', 'Flutter', 'podhelper.rb')
+
+    eval(File.read(File.join(flutter_application_path, '.ios', 'Flutter', 'podhelper.rb')), binding)
+    ## ==============Flutter ==============
+

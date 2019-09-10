@@ -21,7 +21,7 @@
 		4D0882152317BF3900EE911B /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0882102317BF3900EE911B /* SecondViewController.swift */; };
 		4D498F632317DEBA009BA758 /* Flutter.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 4D498F602317DEB9009BA758 /* Flutter.podspec */; };
 		4D498F672317E10B009BA758 /* Flutter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D498F5F2317DEB9009BA758 /* Flutter.framework */; };
-		4DE35284232110CB00C357E0 /* flutter_assets in Resources */ = {isa = PBXBuildFile; fileRef = 4DE35283232110CA00C357E0 /* flutter_assets */; };
+		4D52E18D232638420033CA29 /* flutter_assets in Resources */ = {isa = PBXBuildFile; fileRef = 4D52E18C232638420033CA29 /* flutter_assets */; };
 		4DE35285232113EA00C357E0 /* App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D498F5D2317DEB9009BA758 /* App.framework */; };
 		4DE35286232113EA00C357E0 /* App.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4D498F5D2317DEB9009BA758 /* App.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4DE35288232113EF00C357E0 /* Flutter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D498F5F2317DEB9009BA758 /* Flutter.framework */; };
@@ -88,7 +88,7 @@
 		4D498F5D2317DEB9009BA758 /* App.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = App.framework; sourceTree = "<group>"; };
 		4D498F5F2317DEB9009BA758 /* Flutter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Flutter.framework; sourceTree = "<group>"; };
 		4D498F602317DEB9009BA758 /* Flutter.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Flutter.podspec; sourceTree = "<group>"; };
-		4DE35283232110CA00C357E0 /* flutter_assets */ = {isa = PBXFileReference; lastKnownFileType = folder; name = flutter_assets; path = ../../flutter_library/.ios/Flutter/App.framework/flutter_assets; sourceTree = "<group>"; };
+		4D52E18C232638420033CA29 /* flutter_assets */ = {isa = PBXFileReference; lastKnownFileType = folder; name = flutter_assets; path = App.framework/flutter_assets; sourceTree = "<group>"; };
 		53108B5E90A00E611CD382DF /* Pods_Flutter_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Flutter_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		65659C3F87A35A4838482337 /* Pods-Flutter_iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flutter_iOS.release.xcconfig"; path = "Target Support Files/Pods-Flutter_iOS/Pods-Flutter_iOS.release.xcconfig"; sourceTree = "<group>"; };
 		6747C4B9AE90402269BFB051 /* Pods-Flutter_iOSUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flutter_iOSUITests.release.xcconfig"; path = "Target Support Files/Pods-Flutter_iOSUITests/Pods-Flutter_iOSUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -236,7 +236,7 @@
 		4D498F5C2317DEB9009BA758 /* Flutter */ = {
 			isa = PBXGroup;
 			children = (
-				4DE35283232110CA00C357E0 /* flutter_assets */,
+				4D52E18C232638420033CA29 /* flutter_assets */,
 				4D498F5D2317DEB9009BA758 /* App.framework */,
 				4D498F5E2317DEB9009BA758 /* engine */,
 			);
@@ -282,8 +282,8 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4D0881FC2317BE5100EE911B /* Build configuration list for PBXNativeTarget "Flutter_iOS" */;
 			buildPhases = (
+				4D8F921F2325F4CF000750B7 /* ShellScript */,
 				EF66B8143AC4BB871BC48965 /* [CP] Check Pods Manifest.lock */,
-				4D498F5A2317DB28009BA758 /* ShellScript */,
 				4D0881D02317BE5000EE911B /* Sources */,
 				4D0881D12317BE5000EE911B /* Frameworks */,
 				4D0881D22317BE5000EE911B /* Resources */,
@@ -386,7 +386,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4D0881E22317BE5100EE911B /* LaunchScreen.storyboard in Resources */,
-				4DE35284232110CB00C357E0 /* flutter_assets in Resources */,
+				4D52E18D232638420033CA29 /* flutter_assets in Resources */,
 				4D498F632317DEBA009BA758 /* Flutter.podspec in Resources */,
 				4D0881DF2317BE5100EE911B /* Assets.xcassets in Resources */,
 				4D0881DD2317BE5000EE911B /* Main.storyboard in Resources */,
@@ -432,9 +432,9 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		4D498F5A2317DB28009BA758 /* ShellScript */ = {
+		4D8F921F2325F4CF000750B7 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 12;
+			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (

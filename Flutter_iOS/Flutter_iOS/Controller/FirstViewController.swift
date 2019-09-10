@@ -30,20 +30,11 @@ class FirstViewController: UIViewController {
     }
     
     @objc func pushAction(){
-        let flutterViewController = FlutterViewController()
-        flutterViewController.title = "这是一个flutter页面"
-        //flutterViewController.setInitialRoute("myApp")
-        self.navigationController?.pushViewController(flutterViewController, animated: true)
+        let flutterEngine = (UIApplication.shared.delegate as? AppDelegate)?.flutterEngine
+        let flutterViewController = FlutterViewController(engine: flutterEngine, nibName: nil, bundle: nil)
+        flutterViewController?.title = "这是一个flutter页面"
+        if let flutterVC = flutterViewController{
+            self.navigationController?.pushViewController(flutterVC, animated: true)
+        }
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
